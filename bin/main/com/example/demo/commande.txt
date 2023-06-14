@@ -1,0 +1,1 @@
+curl -v -H "Content-Type: application/json" -X POST -d '{"id":"123","marque":"Audi","prix":30000}' http://localhost:8080/voiture
