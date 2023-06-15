@@ -1,18 +1,17 @@
 package com.example.demo.web;
 
-import org.apache.tomcat.util.http.parser.MediaType;
+import com.example.demo.data.Voiture;
+import com.example.demo.service.Echantillon;
+import com.example.demo.service.Statistique;
+import com.example.demo.service.StatistiqueImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.example.demo.service.Statistique;
-import com.example.demo.service.StatistiqueImpl;
-
-import com.example.demo.data.Voiture;
-import com.example.demo.service.Echantillon;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doNothing;
@@ -21,7 +20,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -33,7 +31,7 @@ public class webTest {
 	@Autowired
 	MockMvc mockMvc;
 
-	/*@Test
+	@Test
 	void testSansVoiture() throws Exception {
 		mockMvc.perform(get("/statistique")
 			.contentType(MediaType.APPLICATION_JSON))
@@ -47,5 +45,5 @@ public class webTest {
 			.content("{\"marque\": \"Audi\", \"prix\": 30000 }")
 			.accept(MediaType.APPLICATION_JSON))
 			.andExpect(status().isOk());
-	}*/
+	}
 }
